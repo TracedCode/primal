@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primed — Optimize Your Testosterone</title>
+<meta name="description" content="Know your testosterone score. Build the habits that move it. Most men notice a difference within 30 days.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --lime: #E8FF47;
+    --black: #0D0D0D;
+    --card: #161616;
+    --muted: #888888;
+    --dim: #2A2A2A;
+    --red: #FF4747;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Syne', sans-serif;
+    background: var(--black);
+    color: white;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(13,13,13,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #1a1a1a;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: -0.03em;
+  }
+
+  .nav-logo-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--lime);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--black);
+  }
+
+  .nav-cta {
+    background: var(--lime);
+    color: var(--black);
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    padding: 12px 24px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.15s, opacity 0.15s;
+  }
+
+  .nav-cta:hover { transform: scale(1.03); opacity: 0.9; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(232,255,71,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: var(--lime);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.1s forwards;
+  }
+
+  .hero-headline {
+    font-size: clamp(52px, 10vw, 96px);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.2s forwards;
+  }
+
+  .hero-headline span { color: var(--lime); }
+
+  .hero-sub {
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 400;
+    color: var(--muted);
+    max-width: 480px;
+    line-height: 1.6;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.3s forwards;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.4s forwards;
+  }
+
+  .btn-primary {
+    background: var(--lime);
+    color: var(--black);
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    padding: 18px 40px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 40px rgba(232,255,71,0.25);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--muted);
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 18px 32px;
+    border-radius: 100px;
+    border: 1px solid #2a2a2a;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.15s, color 0.15s;
+  }
+
+  .btn-secondary:hover { border-color: #444; color: white; }
+
+  .coming-soon-badge {
+    display: inline-block;
+    background: #1a1a1a;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    border: 1px solid #2a2a2a;
+    margin-top: 16px;
+  }
+
+  /* SCORE PREVIEW */
+  .score-preview {
+    margin-top: 80px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+    position: relative;
+  }
+
+  .score-card {
+    background: var(--card);
+    border-radius: 24px;
+    padding: 32px;
+    width: 300px;
+    margin: 0 auto;
+    border: 1px solid #222;
+    position: relative;
+  }
+
+  .score-ring {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 24px;
+    position: relative;
+  }
+
+  .score-ring svg { width: 100%; height: 100%; }
+
+  .score-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+  }
+
+  .score-sub {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--muted);
+    display: block;
+    text-align: center;
+    margin-top: -4px;
+  }
+
+  .score-row {
+    display: flex;
+    justify-content: space-between;
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 16px;
+  }
+
+  .score-col { text-align: center; }
+  .score-col .val { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; }
+  .score-col .val.lime { color: var(--lime); }
+  .score-col .label { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; margin-top: 2px; }
+
+  /* STATS BAR */
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    padding: 60px 24px;
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    text-align: center;
+    padding: 20px 48px;
+    border-right: 1px solid #1a1a1a;
+  }
+
+  .stat:last-child { border-right: none; }
+
+  .stat-val {
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--lime);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  /* SECTIONS */
+  section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 24px;
+  }
+
+  .section-eyebrow {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: var(--lime);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .section-headline {
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 520px;
+    margin-bottom: 60px;
+  }
+
+  /* BENEFITS GRID */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .benefit-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 24px 20px;
+    border: 1px solid #1e1e1e;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .benefit-card:hover {
+    border-color: rgba(232,255,71,0.3);
+    transform: translateY(-2px);
+  }
+
+  .benefit-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .benefit-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+  }
+
+  /* HOW IT WORKS */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .step {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 36px 28px;
+    border: 1px solid #1e1e1e;
+    position: relative;
+  }
+
+  .step-num {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--lime);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .step-title {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  .step-desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .step-icon {
+    font-size: 36px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  /* FEATURES */
+  .features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .feature {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 32px;
+    border: 1px solid #1e1e1e;
+    transition: border-color 0.2s;
+  }
+
+  .feature:hover { border-color: rgba(232,255,71,0.2); }
+
+  .feature-eyebrow {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--lime);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .feature-title {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+
+  .feature-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .feature.large {
+    grid-column: span 2;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .feature.large .feature-text { flex: 1; }
+
+  .feature-visual {
+    flex: 1;
+    background: #1a1a1a;
+    border-radius: 12px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mini-chart {
+    width: 100%;
+    height: 100px;
+    padding: 0 20px;
+  }
+
+  /* REVIEWS */
+  .reviews {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .review {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 28px;
+    border: 1px solid #1e1e1e;
+  }
+
+  .review-stars {
+    color: var(--lime);
+    font-size: 16px;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  .review-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .review-author {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+  }
+
+  /* PRICING */
+  .pricing {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .price-card {
+    background: var(--card);
+    border-radius: 24px;
+    padding: 36px 32px;
+    border: 1px solid #222;
+    width: 280px;
+    text-align: center;
+    transition: border-color 0.2s;
+  }
+
+  .price-card:hover { border-color: #333; }
+
+  .price-card.featured {
+    border-color: var(--lime);
+    position: relative;
+  }
+
+  .price-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--lime);
+    color: var(--black);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    padding: 4px 16px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .price-type {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+  }
+
+  .price-amount {
+    font-size: 52px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .price-period {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .price-billed {
+    font-size: 12px;
+    color: #444;
+    margin-bottom: 28px;
+  }
+
+  .price-trial {
+    font-size: 12px;
+    color: var(--lime);
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+
+  .price-features {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 28px;
+  }
+
+  .price-features li {
+    font-size: 13px;
+    color: var(--muted);
+    padding: 6px 0;
+    border-bottom: 1px solid #1e1e1e;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .price-features li::before {
+    content: '✓';
+    color: var(--lime);
+    font-weight: 800;
+    font-size: 12px;
+  }
+
+  /* CTA SECTION */
+  .cta-section {
+    text-align: center;
+    padding: 120px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(232,255,71,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-headline {
+    font-size: clamp(40px, 7vw, 72px);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .cta-sub {
+    font-size: 17px;
+    color: var(--muted);
+    margin-bottom: 48px;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid #1a1a1a;
+    padding: 40px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: gap;
+    gap: 16px;
+  }
+
+  .footer-logo {
+    font-size: 16px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .footer-links a:hover { color: white; }
+
+  .footer-copy {
+    font-size: 12px;
+    color: #333;
+  }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid #1a1a1a;
+    margin: 0;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s, transform 0.6s;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    .steps { grid-template-columns: 1fr; }
+    .features { grid-template-columns: 1fr; }
+    .feature.large { grid-column: span 1; flex-direction: column; }
+    .reviews { grid-template-columns: 1fr; }
+    .stats { gap: 0; }
+    .stat { padding: 20px 24px; border-right: none; border-bottom: 1px solid #1a1a1a; width: 100%; }
+    .stat:last-child { border-bottom: none; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-icon">P</div>
+    Primed
+  </div>
+  <a href="#download" class="nav-cta">Download — Free Trial</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">Testosterone Optimization</p>
+  <h1 class="hero-headline">Know your T.<br><span>Optimize it.</span></h1>
+  <p class="hero-sub">Get your testosterone score, build the habits that move it, and track your progress week by week.</p>
+  <div class="hero-buttons">
+    <a href="#download" class="btn-primary">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1C4.134 1 1 4.134 1 8s3.134 7 7 7 7-3.134 7-7-3.134-7-7-7zm2.5 7.5l-3.5 3-3.5-3 1-1 2 1.7V4h1v5.2l2-1.7 1 1z" fill="currentColor"/></svg>
+      Download on App Store
+    </a>
+    <a href="#how" class="btn-secondary">See how it works</a>
+  </div>
+  <span class="coming-soon-badge">🔥 Free 7-day trial — no commitment</span>
+
+  <!-- Score preview -->
+  <div class="score-preview">
+    <div class="score-card">
+      <div class="score-ring">
+        <svg viewBox="0 0 140 140">
+          <circle cx="70" cy="70" r="56" fill="none" stroke="#222" stroke-width="10"/>
+          <circle cx="70" cy="70" r="56" fill="none" stroke="#E8FF47" stroke-width="10"
+            stroke-dasharray="351.86" stroke-dashoffset="281.49"
+            stroke-linecap="round" transform="rotate(-90 70 70)"/>
+        </svg>
+        <div class="score-number">38</div>
+        <span class="score-sub">/ 100</span>
+      </div>
+      <div class="score-row">
+        <div class="score-col">
+          <div class="val">38</div>
+          <div class="label">Current</div>
+        </div>
+        <div class="score-col">
+          <div class="val lime">89</div>
+          <div class="label">Potential</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat reveal">
+    <div class="stat-val">10,000+</div>
+    <div class="stat-label">Men optimizing</div>
+  </div>
+  <div class="stat reveal">
+    <div class="stat-val">30 days</div>
+    <div class="stat-label">To notice a difference</div>
+  </div>
+  <div class="stat reveal">
+    <div class="stat-val">4.9★</div>
+    <div class="stat-label">App Store rating</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- BENEFITS -->
+<section id="benefits">
+  <p class="section-eyebrow reveal">What optimized testosterone does</p>
+  <h2 class="section-headline reveal">Higher T.<br>Better you.</h2>
+  <p class="section-sub reveal">Most men are running at 30% of their testosterone potential. These are the benefits of closing that gap.</p>
+
+  <div class="benefits-grid">
+    <div class="benefit-card reveal">
+      <span class="benefit-icon">⚡</span>
+      <div class="benefit-name">All-day energy</div>
+    </div>
+    <div class="benefit-card reveal">
+      <span class="benefit-icon">🔥</span>
+      <div class="benefit-name">Faster fat loss</div>
+    </div>
+    <div class="benefit-card reveal">
+      <span class="benefit-icon">🧠</span>
+      <div class="benefit-name">Sharper focus</div>
+    </div>
+    <div class="benefit-card reveal">
+      <span class="benefit-icon">😴</span>
+      <div class="benefit-name">Deeper sleep</div>
+    </div>
+    <div class="benefit-card reveal">
+      <span class="benefit-icon">💪</span>
+      <div class="benefit-name">More muscle</div>
+    </div>
+    <div class="benefit-card reveal">
+      <span class="benefit-icon">😊</span>
+      <div class="benefit-name">Better mood</div>
+    </div>
+    <div class="benefit-card reveal">
+      <span class="benefit-icon">❤️</span>
+      <div class="benefit-name">Higher drive</div>
+    </div>
+    <div class="benefit-card reveal">
+      <span class="benefit-icon">✨</span>
+      <div class="benefit-name">Clearer skin</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <p class="section-eyebrow reveal">How it works</p>
+  <h2 class="section-headline reveal">Three steps.<br>Real results.</h2>
+  <p class="section-sub reveal">Primed builds a plan around your biology, not a generic template.</p>
+
+  <div class="steps">
+    <div class="step reveal">
+      <span class="step-icon">📋</span>
+      <div class="step-num">Step 01</div>
+      <div class="step-title">Take the quiz</div>
+      <p class="step-desc">10 questions covering your sleep, diet, activity, stress, sunlight, and toxin exposure. Takes 3 minutes.</p>
+    </div>
+    <div class="step reveal">
+      <span class="step-icon">📊</span>
+      <div class="step-num">Step 02</div>
+      <div class="step-title">Get your score</div>
+      <p class="step-desc">Primed calculates your testosterone optimization score and your potential — the gap you're working to close.</p>
+    </div>
+    <div class="step reveal">
+      <span class="step-icon">✅</span>
+      <div class="step-num">Step 03</div>
+      <div class="step-title">Follow your plan</div>
+      <p class="step-desc">A daily habit checklist built from your answers. Complete habits, move your score, watch the trend chart climb.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FEATURES -->
+<section id="features">
+  <p class="section-eyebrow reveal">Everything in Primed</p>
+  <h2 class="section-headline reveal">Built to keep<br>you consistent.</h2>
+
+  <div class="features">
+    <div class="feature reveal">
+      <div class="feature-eyebrow">Daily habits</div>
+      <div class="feature-title">Your personalized plan</div>
+      <p class="feature-desc">Every habit calibrated to your quiz answers. Sleep, diet, training, sunlight, and environment — all covered.</p>
+    </div>
+    <div class="feature reveal">
+      <div class="feature-eyebrow">Streak system</div>
+      <div class="feature-title">Don't break the chain</div>
+      <p class="feature-desc">Daily streaks, weekly summaries, and 8pm reminders if you haven't completed your habits. Consistency is everything.</p>
+    </div>
+    <div class="feature large reveal">
+      <div class="feature-text">
+        <div class="feature-eyebrow">Progress tracking</div>
+        <div class="feature-title">Watch your score move</div>
+        <p class="feature-desc">Your T-score updates weekly based on habit completion. The chart is the most motivating thing in the app — watching a flat line start to climb is addictive.</p>
+      </div>
+      <div class="feature-visual">
+        <svg class="mini-chart" viewBox="0 0 240 100">
+          <polyline points="20,80 60,78 100,70 140,55 180,35 220,20"
+            fill="none" stroke="#E8FF47" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="220" cy="20" r="5" fill="#E8FF47"/>
+          <text x="20" y="95" fill="#444" font-size="10" font-family="Syne">W1</text>
+          <text x="60" y="95" fill="#444" font-size="10" font-family="Syne">W2</text>
+          <text x="100" y="95" fill="#444" font-size="10" font-family="Syne">W3</text>
+          <text x="140" y="95" fill="#444" font-size="10" font-family="Syne">W4</text>
+          <text x="180" y="95" fill="#444" font-size="10" font-family="Syne">W5</text>
+          <text x="215" y="95" fill="#444" font-size="10" font-family="Syne">W6</text>
+        </svg>
+      </div>
+    </div>
+    <div class="feature reveal">
+      <div class="feature-eyebrow">Food guide</div>
+      <div class="feature-title">Eat for testosterone</div>
+      <p class="feature-desc">10 foods that support T production. 8 things silently killing it. Including seed oils, alcohol, and plastic bottles.</p>
+    </div>
+    <div class="feature reveal">
+      <div class="feature-eyebrow">Supplement stack</div>
+      <div class="feature-title">Evidence-based. No fluff.</div>
+      <p class="feature-desc">Zinc, Magnesium, D3+K2, Ashwagandha, Boron — dose, form, timing, and what to avoid. No sponsored recommendations.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <p class="section-eyebrow reveal">What men are saying</p>
+  <h2 class="section-headline reveal">Join men already<br>seeing results.</h2>
+
+  <div class="reviews">
+    <div class="review reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Finally something that actually works. T-score went from 31 to 78 in 8 weeks. The habit tracker keeps me honest every single day."</p>
+      <div class="review-author">Marcus T. — Verified</div>
+    </div>
+    <div class="review reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"The food guide alone changed everything. Cut seed oils, sleep improved, energy through the roof. Didn't think diet could make this much difference."</p>
+      <div class="review-author">Jake R. — Verified</div>
+    </div>
+    <div class="review reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"I didn't think lifestyle could make this much difference. The daily tracker keeps me consistent and the weekly summary is genuinely motivating."</p>
+      <div class="review-author">Dev S. — Verified</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PRICING -->
+<section id="download">
+  <p class="section-eyebrow reveal" style="text-align:center">Simple pricing</p>
+  <h2 class="section-headline reveal" style="text-align:center">Start free.<br>Stay consistent.</h2>
+  <p class="section-sub reveal" style="text-align:center; margin: 0 auto 60px;">7-day free trial on all plans. Cancel anytime through the App Store.</p>
+
+  <div class="pricing">
+    <div class="price-card reveal">
+      <div class="price-type">Monthly</div>
+      <div class="price-amount">$9.99</div>
+      <div class="price-period">per month</div>
+      <div class="price-billed">Billed monthly</div>
+      <div class="price-trial">Includes 7-day free trial</div>
+      <ul class="price-features">
+        <li>Full testosterone score</li>
+        <li>Daily habit plan</li>
+        <li>Food & supplement guide</li>
+        <li>Weekly progress reports</li>
+        <li>Streak tracking</li>
+      </ul>
+      <a href="#" class="btn-secondary" style="width:100%; text-align:center; display:block; padding: 14px;">Download</a>
+    </div>
+    <div class="price-card featured reveal">
+      <div class="price-badge">Best Deal — Save 50%</div>
+      <div class="price-type">Annual</div>
+      <div class="price-amount">$5</div>
+      <div class="price-period">per month</div>
+      <div class="price-billed">$59.99 billed annually</div>
+      <div class="price-trial">Includes 7-day free trial</div>
+      <ul class="price-features">
+        <li>Everything in Monthly</li>
+        <li>Priority support</li>
+        <li>Early access to new features</li>
+        <li>AI Coach (coming soon)</li>
+        <li>Save $60 per year</li>
+      </ul>
+      <a href="#" class="btn-primary" style="width:100%; text-align:center; display:block; padding: 14px;">Download — Best Value</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2 class="cta-headline reveal">The energy is<br><span style="color:var(--lime)">still there.</span></h2>
+  <p class="cta-sub reveal">It's just untapped. Find out where you stand in 3 minutes.</p>
+  <a href="#" class="btn-primary reveal">Download Primed — Free Trial</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <div class="nav-logo-icon">P</div>
+    Primed
+  </div>
+  <div class="footer-links">
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="mailto:support@primedapp.co">Support</a>
+  </div>
+  <div class="footer-copy">© 2026 Primed. All rights reserved.</div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
